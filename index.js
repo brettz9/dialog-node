@@ -457,7 +457,7 @@ var dialogNode = module.exports = {
     console.log("debug-info: args = " + args );
     console.log("debug-info: cb = " + cb);
     console.log("cwd = " + cwd);
-    console.log(' ');
+    console.log('\n');
   },
 
   run: function(cmd, cb, callback){
