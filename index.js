@@ -409,16 +409,24 @@ var dialogNode = module.exports = {
     else if( OS === "darwin")
     {
       str = str.replace(/"/g, "'"); // double quotes to single quotes
-      cmd.push('osascript') && cmd.push('-e');
 
-      var script = 'set theDocument to choose file with prompt "' + str + '"';
-      cmd.push(script);
+
+      var script = "var app = Application.currentApplication(); app.includeStandardAdditions = true; " +
+          "var document = app.chooseFile({withPrompt: \"" + str + "\" }); " +
+          "console.log(\"text returned: \"+document);";
+
+        cmd.push('osascript');
+        cmd.push('-l');
+        cmd.push('JavaScript');
+        cmd.push('-e');
+        cmd.push(script);
 
       cb = function(code, stdout, stderr){
         //parse return from appl script code
         var findstr = "text returned:";
-        retVal = stdout.slice(stdout.indexOf("text returned:") + findstr.length, -1);
-
+        retVal = stdout.slice(stdout.indexOf(findstr) + findstr.length, -1).trim();
+        if(!retVal)
+            retVal = stderr.slice(stderr.indexOf(findstr) + findstr.length, -1).trim();
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
@@ -449,7 +457,7 @@ var dialogNode = module.exports = {
     console.log("debug-info: args = " + args );
     console.log("debug-info: cb = " + cb);
     console.log("cwd = " + cwd);
-    console.log('\n');
+    console.log(' ');
   },
 
   run: function(cmd, cb, callback){
@@ -466,7 +474,7 @@ var dialogNode = module.exports = {
 
       var stdoutlines = 0;
 
-      //this.debugprint(cmd,args,callback);
+      dialogNode.debugprint(cmd,args,callback);
 
       child.stdout.on('data', function(data){
         stdout += data.toString();
