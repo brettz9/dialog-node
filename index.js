@@ -474,7 +474,7 @@ var dialogNode = module.exports = {
 
       var stdoutlines = 0;
 
-      dialogNode.debugprint(cmd,args,callback);
+      //this.debugprint(cmd,args,callback);
 
       child.stdout.on('data', function(data){
         stdout += data.toString();
