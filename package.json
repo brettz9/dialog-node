@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "eslint": "eslint .",
-    "lint": "npm run eslint",
+    "lint": "npm run eslint --",
     "start": "node example.js",
     "server-test": "node server-test.js",
     "test": "node ./test-dialog-node.js"
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "@stylistic/eslint-plugin-js": "^2.8.0",
     "eslint": "^9.11.1",
     "globals": "^15.9.0"
   },

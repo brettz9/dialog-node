@@ -1,11 +1,15 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import styles from '@stylistic/eslint-plugin-js';
 
 export default [
   js.configs.recommended,
   {
     languageOptions: {
       globals: globals.node
+    },
+    plugins: {
+      '@stylistic': styles
     }
   },
   {
@@ -16,6 +20,7 @@ export default [
   },
   {
     rules: {
+      '@stylistic/semi': 'error'
     }
   }
 ];

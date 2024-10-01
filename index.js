@@ -13,7 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OS = os.platform();
 
 const OK_STR = 'OK';
-const CANCEL_STR = 'CANCEL'
+const CANCEL_STR = 'CANCEL';
 
 let cmd = [];
 let cwd = __dirname; //preset cwd
@@ -64,7 +64,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
 
     }
     else if( OS === 'darwin')
@@ -81,7 +81,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
 
     }
     else if (OS === 'win32')
@@ -99,7 +99,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -129,7 +129,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
 
     }
     else if( OS === 'darwin')
@@ -146,7 +146,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -164,7 +164,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -195,7 +195,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if( OS === 'darwin')
     {
@@ -210,7 +210,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -227,7 +227,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -260,7 +260,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if( OS === 'darwin')
     {
@@ -278,7 +278,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -299,7 +299,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -329,7 +329,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if( OS === 'darwin')
     {
@@ -341,7 +341,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
       script += ' default answer "" ';
       script += ` with icon note with title "${title}"`;
       script += ' buttons {"Cancel", "Continue"}';
-      script += ' default button "Continue"'
+      script += ' default button "Continue"';
       script += ` giving up after ${timeout}`;
 
       // const script = 'tell app \"System Events\" to display dialog ';
@@ -355,7 +355,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -373,7 +373,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -404,7 +404,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if( OS === 'darwin')
     {
@@ -417,7 +417,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -452,7 +452,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if( OS === 'darwin')
     {
@@ -476,7 +476,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
     else if (OS === 'win32')
     {
@@ -494,7 +494,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
         if(callback)
           callback(code, retVal, stderr);
         return retVal;
-      }
+      };
     }
 
     return this.run(cmd, cb, callback);
@@ -525,11 +525,11 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
 
       child.stdout.on('data', function(data){
         stdout += data.toString();
-      })
+      });
 
       child.stderr.on('data', function(data){
         stderr += data.toString();
-      })
+      });
 
       child.on('error', function(error){
         console.log('dialog-node, error = ', error);
@@ -558,7 +558,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
           return;
         }
         resolve({response, stderr});
-      })
+      });
     });
   },
 
@@ -586,7 +586,7 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
     `
   } = {}){
     if (!url.match(/https?:/)) {
-      url = `http://localhost:${port}/${url}`
+      url = `http://localhost:${port}/${url}`;
     }
     return new Promise((resolve, reject) => {
       const fileServer = new statik.Server(serverPath, serverOptions);
@@ -657,4 +657,4 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
       open(url, openOptions);
     });
   }
-}
+};

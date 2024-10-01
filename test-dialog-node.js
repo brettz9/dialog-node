@@ -40,7 +40,7 @@ const eventQueue = [
 const evalNextFunction = function(){
 	/* const evalFun = */ eventQueue[ptr].cmd.apply(dialogNode, eventQueue[ptr].args);
 	ptr++;
-}
+};
 
 console.log("starting test-dialog-node ...");
 
