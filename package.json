@@ -32,10 +32,12 @@
   },
   "dependencies": {
     "node-static": "^0.7.11",
-    "open": "^9.1.0"
+    "open": "^10.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.53.0"
+    "@eslint/js": "^9.11.1",
+    "eslint": "^9.11.1",
+    "globals": "^15.9.0"
   },
   "engines": {
     "node": ">=18.0.0"

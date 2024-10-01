@@ -21,7 +21,7 @@ let retVal = '';
 
 if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
 {
-  console.log('unknown OS: ', OS); // eslint-disable-line no-console
+  console.log('unknown OS: ', OS);
   process.exit(9);
 }
 
@@ -501,13 +501,11 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
   },
 
   debugprint (cmd,args,cb){
-    /* eslint-disable no-console */
     console.log('debug-info: cmd = ' + cmd );
     console.log('debug-info: args = ' + args );
     console.log('debug-info: cb = ' + cb);
     console.log('cwd = ' + cwd);
     console.log('\n');
-    /* eslint-enable no-console */
   },
 
   run (cmd, cb, callback){
@@ -520,7 +518,6 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
       try {
         child = spawn(bin, args, {cwd:cwd});
       } catch (err) {
-        // eslint-disable-next-line no-console
         console.log('spawn failed : ' + err.message);
       }
 
@@ -535,7 +532,6 @@ if(OS != 'linux' && OS != 'darwin' && OS != 'win32')
       })
 
       child.on('error', function(error){
-        // eslint-disable-next-line no-console
         console.log('dialog-node, error = ', error);
       });
 

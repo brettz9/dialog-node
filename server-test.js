@@ -6,5 +6,4 @@ const response = await dialog.html({
   // message: 'Testing <b>Dialog Node</b>'
 });
 
-// eslint-disable-next-line no-console
 console.log('response', response);
